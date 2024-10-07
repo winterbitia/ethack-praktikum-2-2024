@@ -1,0 +1,49 @@
+# Nmap 7.94SVN scan initiated Sun Oct  6 07:48:47 2024 as: nmap -sS -sC -sV -A -T4 -p- -oN nmap_log.txt 10.15.42.245
+Warning: 10.15.42.245 giving up on port because retransmission cap hit (6).
+Nmap scan report for 10.15.42.245
+Host is up (0.17s latency).
+Not shown: 65472 closed tcp ports (reset), 60 filtered tcp ports (no-response)
+PORT    STATE SERVICE VERSION
+21/tcp  open  ftp     vsftpd 3.0.5
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| -rw-r--r--    1 0        0          142834 Oct 04 19:41 list.xyz
+|_-rw-r--r--    1 0        0             701 Oct 03 17:41 readme.txt
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:10.33.13.110
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 1800
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 5
+|      vsFTPd 3.0.5 - secure, fast, stable
+|_End of status
+22/tcp  open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.11 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 2e:81:54:b8:0e:bc:73:4b:66:09:2b:aa:0d:63:c9:59 (RSA)
+|   256 0c:ff:27:69:2d:78:e8:05:5e:cb:69:dc:cc:26:79:73 (ECDSA)
+|_  256 e9:af:88:b7:62:f5:c6:52:25:1a:23:67:ab:49:6d:20 (ED25519)
+487/tcp open  http    nginx 1.18.0 (Ubuntu)
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+|_http-generator: WordPress 6.6.2
+|_http-title: Suka-Suka Zidan
+Aggressive OS guesses: Linux 4.15 - 5.8 (95%), Linux 5.3 - 5.4 (95%), Linux 2.6.32 (95%), Linux 5.0 - 5.5 (95%), Linux 3.1 (95%), Linux 3.2 (95%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (94%), ASUS RT-N56U WAP (Linux 3.4) (93%), Linux 3.16 (93%), Linux 5.0 (93%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 7 hops
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 111/tcp)
+HOP RTT       ADDRESS
+1   892.88 ms 10.33.0.1
+2   920.57 ms 10.11.2.81
+3   ...
+4   920.52 ms 10.0.15.250
+5   920.51 ms 10.0.1.34
+6   920.56 ms 10.15.47.250
+7   920.42 ms 10.15.42.245
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Oct  6 08:01:47 2024 -- 1 IP address (1 host up) scanned in 779.88 seconds
